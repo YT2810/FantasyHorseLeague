@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, Plus, Check, Clock, MapPin, Trophy, DollarSign, Users } from 'lucide-react'
+import { ArrowLeft, Plus, Check, Clock, MapPin, Trophy } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 interface Horse {
@@ -31,7 +31,7 @@ interface Contest {
 export default function ContestPage({ params }: { params: { id: string } }) {
   const router = useRouter()
   const [selectedHorses, setSelectedHorses] = useState<Horse[]>([])
-  const [budget, setBudget] = useState(50000)
+  const [budget] = useState(50000)
   const [usedBudget, setUsedBudget] = useState(0)
   
   // Mock contest data
@@ -312,7 +312,7 @@ export default function ContestPage({ params }: { params: { id: string } }) {
               
               {selectedHorses.length > 0 ? (
                 <div className="space-y-3">
-                  {selectedHorses.map((horse, index) => (
+                  {selectedHorses.map((horse) => (
                     <div key={horse.id} className="flex items-center justify-between py-2 border-b border-slate-700 last:border-b-0">
                       <div className="flex items-center space-x-3">
                         <div className={`w-4 h-4 rounded-full ${getSilkColor(horse.silks)}`}></div>

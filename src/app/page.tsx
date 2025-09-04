@@ -2,15 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import { Trophy, Users, Target, Coins, Play, Star, TrendingUp, Calendar, MapPin, Clock } from 'lucide-react'
+import { Trophy, Target, Coins, Play, Star, TrendingUp, Calendar, MapPin, Clock } from 'lucide-react'
 import { initWeb3Auth } from '@/lib/web3auth'
 import { supabase } from '@/lib/supabase'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
   const [user, setUser] = useState<{name: string; email: string; verifierId: string} | null>(null)
-  const [tournaments, setTournaments] = useState<{id: string; name: string; entry_fee: number; is_locked: boolean}[]>([])
-
   useEffect(() => {
     loadTournaments()
   }, [])
@@ -24,7 +22,7 @@ export default function Home() {
         .limit(5)
       
       if (error) throw error
-      setTournaments(data || [])
+      // setTournaments(data || [])
     } catch (error) {
       console.error('Error loading tournaments:', error)
     }
@@ -279,7 +277,7 @@ export default function Home() {
       <section id="how-it-works" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-white mb-4">It's Simple</h3>
+            <h3 className="text-4xl font-bold text-white mb-4">It&apos;s Simple</h3>
             <p className="text-xl text-slate-300">Three easy steps to start winning</p>
           </div>
           

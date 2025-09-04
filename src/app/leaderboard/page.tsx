@@ -229,7 +229,7 @@ export default function LeaderboardPage() {
               <h2 className="text-2xl font-bold text-white">
                 {activeTab === 'overall' && 'Overall Rankings'}
                 {activeTab === 'weekly' && 'This Week'}
-                {activeTab === 'daily' && 'Today\'s Leaders'}
+                {activeTab === 'daily' && 'Today&apos;s Leaders'}
               </h2>
               <div className="text-sm text-slate-400">
                 Last updated: 2 minutes ago
