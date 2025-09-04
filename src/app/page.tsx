@@ -15,7 +15,7 @@ export default function Home() {
 
   const loadTournaments = async () => {
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('tournaments')
         .select('*')
         .order('created_at', { ascending: false })
@@ -308,7 +308,7 @@ export default function Home() {
               </div>
               <h4 className="text-2xl font-bold mb-4 text-white">Win and Collect</h4>
               <p className="text-slate-300 text-lg leading-relaxed">
-                Earn points based on your horses' performance and climb the leaderboard to win real prizes.
+                Earn points based on your horses&apos; performance and climb the leaderboard to win real prizes.
               </p>
             </div>
           </div>
