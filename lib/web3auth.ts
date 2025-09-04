@@ -16,7 +16,6 @@ const chainConfig = {
 
 export const web3auth = new Web3Auth({
   clientId,
-  chainConfig,
   web3AuthNetwork: WEB3AUTH_NETWORK.SAPPHIRE_MAINNET,
   uiConfig: {
     appName: "Fantasy Horse League",
@@ -30,30 +29,9 @@ export const web3auth = new Web3Auth({
   },
 });
 
-const openloginAdapter = new OpenloginAdapter({
-  loginSettings: {
-    mfaLevel: "optional",
-  },
-  adapterSettings: {
-    whiteLabel: {
-      appName: "Fantasy Horse League",
-      appUrl: "https://fantasy-horse-league.vercel.app",
-      logoLight: "https://web3auth.io/images/web3auth-logo.svg",
-      logoDark: "https://web3auth.io/images/web3auth-logo---Dark.svg",
-      defaultLanguage: "en",
-      mode: "dark",
-      theme: {
-        primary: "#0ea5e9",
-      },
-    },
-  },
-});
-
-web3auth.configureAdapter(openloginAdapter);
-
 export const initWeb3Auth = async () => {
   try {
-    await web3auth.initModal();
+    await web3auth.init();
     return web3auth;
   } catch (error) {
     console.error("Error initializing Web3Auth:", error);
