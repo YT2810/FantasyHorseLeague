@@ -8,8 +8,8 @@ import { supabase } from '@/lib/supabase'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
-  const [user, setUser] = useState<any>(null)
-  const [tournaments, setTournaments] = useState<any[]>([])
+  const [user, setUser] = useState<{name: string; email: string; verifierId: string} | null>(null)
+  const [tournaments, setTournaments] = useState<{id: string; name: string; entry_fee: number; is_locked: boolean}[]>([])
 
   useEffect(() => {
     loadTournaments()
@@ -146,7 +146,7 @@ export default function Home() {
               <Trophy className="h-12 w-12 text-cyan-400 mx-auto mb-4" />
               <h4 className="text-xl font-semibold mb-3 text-white">2. Construye</h4>
               <p className="text-slate-300">
-                Selecciona tus caballos favoritos dentro del presupuesto para crear tu "Establo".
+                Selecciona tus caballos favoritos dentro del presupuesto para crear tu &quot;Establo&quot;.
               </p>
             </div>
             <div className="text-center p-6 rounded-lg bg-slate-700/30 border border-slate-600/50">

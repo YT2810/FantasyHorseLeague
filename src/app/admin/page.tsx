@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Upload, FileText, Lock, Unlock, Trophy, Calculator, Save, Eye } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
@@ -43,7 +43,7 @@ export default function AdminDashboard() {
     races: []
   })
   const [isUploading, setIsUploading] = useState(false)
-  const [pdfData, setPdfData] = useState<any>(null)
+  const [pdfData, setPdfData] = useState<{tournament_name: string; races: Race[]} | null>(null)
   const [activeTab, setActiveTab] = useState('upload')
 
   const onDrop = async (acceptedFiles: File[]) => {
@@ -420,7 +420,7 @@ export default function AdminDashboard() {
               <h2 className="text-xl font-semibold mb-4 text-white">Ingresar Resultados</h2>
               <p className="text-slate-300 mb-4">
                 Ingresa los números de los caballos ganadores para cada posición. 
-                Para empates, separa los números con comas (ej: "1,3" para empate en primer lugar).
+                Para empates, separa los números con comas (ej: &quot;1,3&quot; para empate en primer lugar).
               </p>
               
               {tournament.races.map((race, index) => (
