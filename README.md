@@ -18,10 +18,10 @@ Una plataforma de fantasy sports para carreras de caballos con moneda virtual OR
 En tu dashboard de Vercel, configura estas variables:
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://ljmitvkzprariugolzyk.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anon_de_supabase
-NEXT_PUBLIC_WEB3AUTH_CLIENT_ID=BAH_Hm_hVXz0feX-4JlL4PGglx440JZIUAS99VcBVoRziTT33IxqlqebzFXoI7IahIzNzlf8tU87aVRhbp0_GgI
-NEXT_PUBLIC_APP_URL=https://tu-dominio.vercel.app
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_WEB3AUTH_CLIENT_ID=your_web3auth_client_id
+NEXT_PUBLIC_APP_URL=https://your-domain.vercel.app
 ```
 
 ### 2. Deploy Directo desde Carpeta
